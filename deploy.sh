@@ -10,7 +10,7 @@ then
    rm -r docs
    echo "El directorio docs eliminado"
 
-else
+fi
 
    npm run build
 
@@ -25,7 +25,7 @@ else
 
    echo "deploy success"
 
-fi
+
 
 
 cd -
