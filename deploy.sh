@@ -3,23 +3,28 @@
 # abort on errors
 set -e
 
-rm -r docs
+if [ -d docs ]
 
-# build
-npm run build
+then
 
-mv dist docs
+   echo "El directorio existe"
+   rm -r docs
 
-# navigate into the build output directory
-git add .
-#git add docs -f
+else
 
-git commit -m "deploying"
+   echo "El directorio no existe"
+   npm run build
 
-# if you are deploying to https://<USERNAME>.github.io/<REPO>
-# git push -f git@github.com:andycodev/deploy-vue-cli-test.git master:gh-pages
-# git push -f https://github.com/andycodev/deploy-vue-cli-test.git master:gh-pages
+   # build
+   mv dist docs
 
-git push
+   git add .
+
+   git commit -m "deploying"
+
+   git push
+
+fi
+
 
 cd -
