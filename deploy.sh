@@ -7,12 +7,11 @@ if [ -d docs ]
 
 then
 
-   echo "El directorio existe"
    rm -r docs
+   echo "El directorio docs eliminado"
 
 else
 
-   echo "El directorio no existe"
    npm run build
 
    # build
@@ -23,6 +22,8 @@ else
    git commit -m "deploying"
 
    git push
+
+   echo "deploy success"
 
 fi
 
