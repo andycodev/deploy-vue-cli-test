@@ -26,6 +26,4 @@ fi
    echo "deploy success"
 
 
-
-
 cd -
